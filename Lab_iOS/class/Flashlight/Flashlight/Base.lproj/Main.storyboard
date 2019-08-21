@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--VC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="VC" customModule="Flashlight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="Views" customModule="Flashlight" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGT-ec-59M">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hpJ-Ix-aak">
+                                <rect key="frame" x="107" y="261" width="161" height="29"/>
+                                <segments>
+                                    <segment title="White"/>
+                                    <segment title="Yellow"/>
+                                    <segment title="Red"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changecolor:" destination="BYZ-38-t0r" eventType="valueChanged" id="Goe-ig-VYV"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hTq-1g-fh8">
+                                <rect key="frame" x="91" y="397" width="191.5" height="31"/>
+                                <connections>
+                                    <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="2Wn-4O-6Kj"/>
+                                </connections>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xbm-Di-Rtx">
+                                <rect key="frame" x="163" y="328" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchtap:" destination="BYZ-38-t0r" eventType="valueChanged" id="Mhj-yw-Hgb"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mGT-ec-59M" secondAttribute="trailing" id="2NJ-Ia-vch"/>
+                            <constraint firstItem="hpJ-Ix-aak" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.8" id="9gb-bp-r6G"/>
+                            <constraint firstItem="hTq-1g-fh8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.2" id="HK0-jI-X1j"/>
+                            <constraint firstItem="mGT-ec-59M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q6t-wD-FPm"/>
+                            <constraint firstItem="mGT-ec-59M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SUX-SR-sC9"/>
+                            <constraint firstItem="hpJ-Ix-aak" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bhu-Di-8nR"/>
+                            <constraint firstItem="Xbm-Di-Rtx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fUw-0o-Ino"/>
+                            <constraint firstItem="Xbm-Di-Rtx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="sUC-kH-bTB"/>
+                            <constraint firstItem="hTq-1g-fh8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uVX-Ht-hh9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mGT-ec-59M" secondAttribute="bottom" id="vU3-Lb-csX"/>
+                            <constraint firstItem="hTq-1g-fh8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="zek-Lp-0gN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outlet property="flashlightview" destination="mGT-ec-59M" id="IaQ-EU-xac"/>
+                            <outlet property="segmentcontroller" destination="hpJ-Ix-aak" id="kIw-rz-pMc"/>
+                            <outlet property="sliders" destination="hTq-1g-fh8" id="Ym1-iO-yS8"/>
+                            <outlet property="switchs" destination="Xbm-Di-Rtx" id="ize-7X-WXg"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="views" destination="8bC-Xf-vdC" id="rT3-Gi-3tw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
